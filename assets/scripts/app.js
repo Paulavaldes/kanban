@@ -76,7 +76,7 @@ function createTask(title, column) {
     hiddenSpan.style.display = 'none';
 
     let text = document.createTextNode(title);
-    close.src = 'images/cancelar.png';
+    close.src = 'assets/images/cancelar.png';
 
     // añadir estilo para el boton de "eliminar tarea"
     close.className = 'x';
