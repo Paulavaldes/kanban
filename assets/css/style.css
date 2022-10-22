@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #0770ac;
+    background: linear-gradient(24deg, #7be9fb, #0770ac, #23b9ff);
+    background-size: 600% 600%;
+    animation: AnimationName 8s ease infinite;
+  }
+
+  @keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 48%}
+    100%{background-position:0% 50%}
+}
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.board {
+    background-color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 50px auto;
+    width:80%;
+}
+
+/* FORM */
+
+.add {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form{
+    padding: 1.5rem;
+}
+
+.buttom{
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    width: 90px;
+    height: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-left: 0.3rem;
+    box-shadow: 0 1px 5px rgba(0,0,0,.4);
+}
+
+.buttom:hover {
+    color: #00838F;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, .14), 0 3px 1px -6px rgba(0, 0, 0, .2), 2px 5px 3px 0 rgba(0, 0, 0, .12);
+    color: black;
+  }
+
+.input{
+    width: 250px;
+    height: 30px;
+    font-size: 17px;
+    box-shadow: 0.5px 0.5px rgba(0,0,0,.4);
+    padding: 0.5rem;
+    outline: 0;
+    border: 1px solid rgba(0,0,0,.4);
+    border-radius: 3px;
+    transition-duration: 0.25s;
+    font-weight: 300;
+}
+
+.input:focus{
+    background-color: rgb(162, 192, 197);
+    width: 300px;
+    color: #393d3f;
+}
+
+.input:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* KANBAN */
+
+.board .todo, .board .inprogress, .board .done {
+    border: 1px solid rgb(114, 114, 114);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top:0.5rem;
+    margin-bottom: 1rem;
+    width: 30%;
+    box-shadow: 0 1px 5px rgba(0,0,0,.4);
+}
+
+.tasks {
+    min-height: 300px;
+}
+
+.task {
+    border:0;
+    border-radius: 1rem;    
+    color: white;
+    display:flex;    
+    font-weight: bold;
+    justify-content: space-between;
+    margin: .5rem 0;
+    padding: 0.2rem 1rem;
+}
+
+.todo .task {
+    background: linear-gradient(356deg, rgba(43,76,214,1) 0%, rgba(120,150,221,1) 10%);
+}
+
+.inprogress .task {
+    background: linear-gradient(356deg, rgb(197, 185, 20) 0%, rgb(221, 203, 120) 10%);
+} 
+
+.done .task {
+    background: linear-gradient(356deg, rgba(35,135,61,1) 0%, rgb(61, 202, 115) 10%);
+}
+
+h4{
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.x{
+    width: 1.1rem;
+    height: 1.1em;
+    cursor: pointer;
+}
+
+.status{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.first{
+    width: 2.7rem;
+    height: 2.7rem;
+}
+
+.second{
+    width: 3rem;
+    height: 3rem;
+}
+
+.third{
+    width: 3rem;
+    height: 3rem;
+}
+
+.delete-all-todos, .delete-all-inprogress, .delete-all-done{
+    width: 30px;
+    height: 30px;
+}
+
+.delete-all{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* TOGGLE */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 1.5rem;
+  }
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+  
+.toggle:checked + .slider {
+    background-color: dodgerblue;
+}
+  
+.toggle:checked + .slider:before {
+    transform: translateX(26px);
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
